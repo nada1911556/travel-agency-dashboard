@@ -1,13 +1,20 @@
 import React from 'react'
-import { Outlet } from "react-router"; // استيراد الـ Outlet
+import { Outlet } from "react-router";
+import {SidebarComponent} from "@syncfusion/ej2-react-navigations";
+import {Mobilesidebar, Navitems} from "../../../components"; // استيراد الـ Outlet
 
 const AdminLayout = () => {
     return (
         <div className="admin-layout">
-            <h1>Admin layout</h1> {/* هيدر أو سايد بار ثابت */}
-
-            {/* الـ Outlet هو المكان اللي هيترسم فيه الـ Dashboard */}
-            <Outlet />
+            <Mobilesidebar/>
+            <aside className="w-full max-w-[270px] hidden lg:block">
+                <SidebarComponent width={270} enableGestures={false}>
+                <Navitems/>
+                </SidebarComponent>
+            </aside>
+            <aside className="children">
+                <Outlet/>
+            </aside>
         </div>
     )
 }

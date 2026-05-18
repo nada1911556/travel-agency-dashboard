@@ -88,6 +88,7 @@ declare interface StatsCard {
   total: number;
   lastMonthCount: number;
   currentMonthCount: number;
+  
 }
 
 declare interface TrendResult {
